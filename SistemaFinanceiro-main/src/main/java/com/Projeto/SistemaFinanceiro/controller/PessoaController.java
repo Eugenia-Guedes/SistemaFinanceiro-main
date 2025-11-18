@@ -4,6 +4,7 @@ import com.Projeto.SistemaFinanceiro.domain.atualizacao.DadosAtualizacaoPessoa;
 import com.Projeto.SistemaFinanceiro.domain.cadastro.DadosCadastroPessoa;
 import com.Projeto.SistemaFinanceiro.domain.detalhamento.DadosDetalhamentoPessoa;
 import com.Projeto.SistemaFinanceiro.domain.listagem.DadosListagemPessoa;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,6 +19,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/pessoas")
+@SecurityRequirement(name = "bearer-key")
 public class PessoaController {
 
     @Autowired // é usada para injetar um objeto gerenciado pelo Spring em outra classe.
